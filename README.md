@@ -24,3 +24,7 @@ This will create your cuba project with its 2 files:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Thanks
+
+This project is inspired from [cuba-libre](https://github.com/gdurelle/cuba-libre).
