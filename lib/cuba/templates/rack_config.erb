@@ -1,6 +1,7 @@
-<%= <<-TEMPLATE.gsub /^\s+/, ""
-    require "./#{project_name}"
+<%=
+<<-TEMPLATE
+require "./#{project_name}"
 
-    run Cuba
-    TEMPLATE
+run Cuba
+TEMPLATE
 %>
