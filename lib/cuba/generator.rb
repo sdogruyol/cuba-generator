@@ -9,6 +9,10 @@ module Cuba
 
     def initialize(name)
       @project_name = name.downcase
+      create_dir
+      create_config_file
+      create_cuba_file
+      puts "Created your Cuba app at #{@project_name} directory. Rock on /\-/"
     end
 
     def create_dir
