@@ -12,7 +12,7 @@ module Cuba
       create_dir
       create_config_file
       create_cuba_file
-      puts "Created your Cuba app at #{@project_name} directory. Rock on /\-/"
+      puts "Created your Cuba app at #{@project_name} directory. Rock on!"
     end
 
     def create_dir
