@@ -1,8 +1,12 @@
 require 'cuba/generator/version'
 require 'securerandom'
+require 'erb'
+require 'ostruct'
 
 module Cuba
   class Generator
+    APPROOT = File.expand_path(File.dirname(__FILE__))
+
     def initialize(name)
       @project_name = name.downcase
     end
@@ -26,52 +30,17 @@ module Cuba
     private
 
     def setup_cuba
-<<-EOF
-require 'cuba'
-
-# If you need extra protection.
-# require 'rack/protection'
-# Cuba.use Rack::Protection
-# Cuba.use Rack::Protection::RemoteReferrer
-
-Cuba.use Rack::Session::Cookie, :secret => "#{SecureRandom.base64(64)}"
-
-# Cuba includes a plugin called Cuba::Render that provides a couple of helper methods for rendering templates.
-# require "cuba/render"
-# Cuba.plugin(Cuba::Render)
-
-# This plugin uses Tilt, which serves as an interface to a bunch of different Ruby template engines
-# (ERB, Haml, Sass, CoffeeScript, etc.), so you can use the template engine of your choice.
-# require 'slim'
-# Cuba.settings[:render][:template_engine] = 'slim'
-
-# Cuba.settings[:render][:template_engine] = "slim"
-# Cuba.settings[:render][:views] = "./views/admin/"
-# Cuba.settings[:render][:layout] = "admin"
-
-# To launch just type: 'rackup' in your console
-Cuba.define do
-  on get do
-    on "#{@project_name}" do
-      on root do
-        res.write 'Hello world!'
-      end
-    end
-
-    on root do
-      res.redirect "/#{@project_name}"
-    end
-  end
-end
-EOF
+      path = File.read File.join(APPROOT, './templates/app.erb')
+      erb(path, {project_name: @project_name})
     end
 
     def setup_config
-<<-EOF
-require "./#{@project_name}"
+      path = File.read File.join(APPROOT, './templates/rack_config.erb')
+      erb(path, {project_name: @project_name})
+    end
 
-run Cuba
-EOF
+    def erb(template, vars)
+      ERB.new(template).result(OpenStruct.new(vars).instance_eval { binding })
     end
   end
 end
