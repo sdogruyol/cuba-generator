@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'cuba/generator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'cuba-libre'
+  spec.name          = 'cuba-generator'
   spec.version       = Cuba::Generator::VERSION
   spec.authors       = ['Serdar Dogruyol']
   spec.email         = ['dogruyolserdar@gmail.com']

@@ -34,7 +34,7 @@ require 'cuba'
 # Cuba.use Rack::Protection
 # Cuba.use Rack::Protection::RemoteReferrer
 
-Cuba.use Rack::Session::Cookie, :secret => "#{SecureRandom.base64(128)}"
+Cuba.use Rack::Session::Cookie, :secret => "#{SecureRandom.base64(64)}"
 
 # Cuba includes a plugin called Cuba::Render that provides a couple of helper methods for rendering templates.
 # require "cuba/render"
