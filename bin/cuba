@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require "cuba/libre"
+require "cuba/generator"
 
 if ARGV.length == 2 && ARGV[0] == 'new'
-  project = Cuba::Libre.new(ARGV[1])
+  project = Cuba::Generator.new(ARGV[1])
   project.create_dir
   project.create_cuba_file
   project.create_config_file

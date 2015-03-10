@@ -1,8 +1,8 @@
-require "cuba/libre/version"
+require 'cuba/generator/version'
 require 'securerandom'
 
 module Cuba
-  class Libre
+  class Generator
     def initialize(name)
       @project_name = name.downcase
     end

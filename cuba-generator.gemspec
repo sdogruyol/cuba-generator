@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cuba/libre/version'
+require 'cuba/generator/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'cuba-libre'
-  spec.version       = Cuba::Libre::VERSION
-  spec.authors       = ['Gregory Durelle']
-  spec.email         = ['gregory.durelle@gmail.com']
+  spec.version       = Cuba::Generator::VERSION
+  spec.authors       = ['Serdar Dogruyol']
+  spec.email         = ['dogruyolserdar@gmail.com']
   spec.summary       = %q{Generator for Cuba framework.}
   spec.description   = %q{Helps create cuba projects through a minimalist generator.}
   spec.homepage      = ''

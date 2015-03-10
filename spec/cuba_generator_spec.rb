@@ -1,7 +1,7 @@
-require 'cuba/libre'
+require 'cuba/generator'
 
-describe Cuba::Libre do
-  subject { Cuba::Libre.new('myProject') }
+describe Cuba::Generator do
+  subject { Cuba::Generator.new('myProject') }
 
   it 'create_dir' do
     expect(Dir).to receive(:mkdir)
