@@ -6,16 +6,17 @@ cuba-generator is a generator to help creating Cuba projects.
 
 ## Installation
 
-    $ gem install cuba-generator
+    gem install cuba-generator
 
 ## Usage
 
-    $ cuba new [projectName]
+    cuba new [projectName] [options]
 
-This will create your cuba project with its 2 files:
+Additionally you can specify the type of your app via ***--type*** . E.g to generate an API starting point.
 
-* The config.ru to ```rackup```your project.
-* The projectname.rb file that contains your project config and routes.
+    cuba new [projectName] --type api
+
+By default ***--type*** is 'app'.
 
 ## Contributing
 
