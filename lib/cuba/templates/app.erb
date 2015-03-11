@@ -23,12 +23,9 @@ Cuba.use Rack::Session::Cookie, :secret => "#{SecureRandom.base64(64)}"
 # To launch just type: 'rackup' in your console
 Cuba.define do
   on get do
-    on "#{project_name}" do
-      res.write 'Hello world!'
-    end
 
     on root do
-      res.redirect "/#{project_name}"
+      res.write "Hello #{project_name}"
     end
   
   end

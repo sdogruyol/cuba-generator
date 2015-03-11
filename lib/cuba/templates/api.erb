@@ -1,0 +1,24 @@
+<%=
+<<-TEMPLATE
+require 'cuba'
+require 'json'
+
+# If you need extra protection.
+# require 'rack/protection'
+# Cuba.use Rack::Protection
+# Cuba.use Rack::Protection::RemoteReferrer
+
+# To launch just type: 'rackup' in your console
+Cuba.define do
+  on get do
+
+    on root do
+      data = { first_name: 'Hello', last_name: 'World' }
+      res.headers["Content-Type"] = "application/json; charset=utf-8"
+      res.write data.to_json
+    end
+  
+  end
+end
+TEMPLATE
+%>
