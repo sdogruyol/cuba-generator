@@ -1,25 +1,28 @@
 require 'commander'
 require_relative 'version'
+require_relative '../generator'
 
-module Russh
+module Cuba
   class Cli
     include Commander::Methods
 
     def run
       program :name, 'cuba'
-      program :version, VERSION
-      program :description, ''
+      program :version, Cuba::Generator::VERSION
+      program :description, 'Application Generator for Cuba framework.'
 
       command :new do |c|
-        c.syntax = 'russh new [options]'
-        c.description = 'Creates a new host'
+        c.syntax = 'cuba new [options]'
+        c.description = 'Creates an app with preferred type'
         c.option '--type STRING', String, 'Creates an app with preferred type'
         c.action do |args, options|
-          raise ArgumentError.new("Type is required!") unless options.type
-
+          if options.type
+            Cuba::Generator.new(ARGV[1], options.type)
+          else
+            Cuba::Generator.new(ARGV[1], :app)
+          end
         end
       end
-
       run!
     end
   end

@@ -13,7 +13,7 @@ module Cuba
       create_dir
       create_config_file
       create_cuba_file
-      puts "Created your Cuba app at #{@project_name} directory. Rock on!"
+      puts "Created your Cuba #{@type} at /#{@project_name} directory. Rock on!"
     end
 
     def create_dir
@@ -35,8 +35,12 @@ module Cuba
     private
 
     def setup_cuba
-      path = File.read File.join(APPROOT, './templates/app.erb')
-      erb(path, {project_name: @project_name})
+      path = if @type.to_sym == :app
+        File.read File.join(APPROOT, './templates/app.erb')
+      elsif @type.to_sym == :api
+        File.read File.join(APPROOT, './templates/api.erb')
+      end
+        erb(path, {project_name: @project_name})
     end
 
     def setup_config

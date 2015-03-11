@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Cuba::Generator::VERSION
   spec.authors       = ['Serdar Dogruyol']
   spec.email         = ['dogruyolserdar@gmail.com']
-  spec.summary       = %q{Generator for Cuba framework.}
+  spec.summary       = %q{Application Generator for Cuba framework.}
   spec.description   = %q{Helps create cuba projects through a minimalist generator.}
   spec.homepage      = ''
   spec.license       = 'MIT'

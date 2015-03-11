@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require "cuba/generator"
+#!/usr/bin/env ruby
 
-if ARGV.length == 2 && ARGV[0] == 'new'
-  project = Cuba::Generator.new(ARGV[1])
-else
-  puts "cuba new <projectName>"
-end
+# encoding: utf-8
+
+$LOAD_PATH.unshift(File.dirname(File.realpath(__FILE__)) + '/../lib')
+require 'cuba/generator/cli'
+Cuba::Cli.new.run
