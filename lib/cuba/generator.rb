@@ -7,8 +7,9 @@ module Cuba
   class Generator
     APPROOT = File.expand_path(File.dirname(__FILE__))
 
-    def initialize(name)
+    def initialize(name, type)
       @project_name = name.downcase
+      @type = type
       create_dir
       create_config_file
       create_cuba_file
