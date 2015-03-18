@@ -15,11 +15,14 @@ module Cuba
         c.syntax = 'cuba new [options]'
         c.description = 'Creates a new Cuba app'
         c.option '--type STRING', String, 'Creates an app with preferred type'
+        c.option '--database STRING', String, 'Setups a database configuration with DataMapper'
         c.action do |args, options|
           if options.type
-            Cuba::Generator.new(ARGV[1], options.type)
+            generator = Cuba::Generator.new(ARGV[1], options.type)
+            generator.create_database_file if options.database == 'postgresql'
           else
-            Cuba::Generator.new(ARGV[1], :app)
+            generator = Cuba::Generator.new(ARGV[1], :app)
+            generator.create_database_file if options.database == 'postgresql'
           end
         end
       end

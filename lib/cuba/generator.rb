@@ -33,8 +33,11 @@ module Cuba
     end
 
     def create_database_file
-      File.open("./#{@project_name}/#{@project_name}.rb", 'w+') do |file|
+      File.open("./#{@project_name}/database.rb", 'w+') do |file|
         file.write setup_database
+      end
+      File.open("./#{@project_name}/Gemfile", 'w+') do |file|
+        file.write setup_gemfile
       end
     end
 
@@ -56,8 +59,12 @@ module Cuba
       create_template 'db'
     end
 
+    def setup_gemfile
+      create_template 'gemfile'
+    end
+
     def create_template(name)
-      template = File.read File.join(APPROOT, './templates/', name, '.erb')
+      template = File.read File.join(APPROOT, 'templates/', "#{name}.erb")
       erb(template, {project_name: @project_name})
     end
 
