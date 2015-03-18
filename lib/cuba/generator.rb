@@ -32,20 +32,33 @@ module Cuba
       end
     end
 
+    def create_database_file
+      File.open("./#{@project_name}/#{@project_name}.rb", 'w+') do |file|
+        file.write setup_database
+      end
+    end
+
     private
 
     def setup_cuba
-      path = if @type.to_sym == :app
-        File.read File.join(APPROOT, './templates/app.erb')
+      if @type.to_sym == :app
+        create_template 'app'
       elsif @type.to_sym == :api
-        File.read File.join(APPROOT, './templates/api.erb')
+        create_template 'api'
       end
-        erb(path, {project_name: @project_name})
     end
 
     def setup_config
-      path = File.read File.join(APPROOT, './templates/rack_config.erb')
-      erb(path, {project_name: @project_name})
+      create_template 'rack_config'
+    end
+
+    def setup_database
+      create_template 'db'
+    end
+
+    def create_template(name)
+      template = File.read File.join(APPROOT, './templates/', name, '.erb')
+      erb(template, {project_name: @project_name})
     end
 
     def erb(template, vars)
