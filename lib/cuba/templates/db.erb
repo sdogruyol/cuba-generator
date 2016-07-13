@@ -3,8 +3,10 @@
 
 require 'data_mapper'
 
-DataMapper.setup(:default, 'postgres://username@localhost/db_name')
-
+# Uncomment the Database you want to use.
+# DataMapper.setup(:default, 'postgres://username@localhost/db_name')
+# DataMapper.setup(:default, 'sqlite:///#{Dir.pwd}/db_name')
+# DataMapper.setup(:default, 'mysql://username@localhost/db_name')
 # Here's an example User model
 # class User
 #   include DataMapper::Resource
