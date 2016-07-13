@@ -6,7 +6,7 @@ require 'cuba/generator/version'
 Gem::Specification.new do |spec|
   spec.name          = 'cuba-generator-duo'
   spec.version       = Cuba::Generator::VERSION
-  spec.authors       = ['Serdar Dogruyol Derek Viera']
+  spec.authors       = ['Derek Viera']
   spec.email         = ['ma.dmviera01@gmail.com']
   spec.summary       = %q{Application Generator for Cuba framework.}
   spec.description   = %q{Helps create cuba projects through a minimalist generator.}
