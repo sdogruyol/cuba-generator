@@ -23,6 +23,8 @@ To generate an application with a Postgresql or Sqlite configuration setup use *
     
 
     cuba new [projectName] --database sqlite
+    
+    cuba new [projectName] --database mysql
 
 By default ***--type*** is 'app'.
 
