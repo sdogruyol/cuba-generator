@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/cuba-generator-duo.svg)](https://badge.fury.io/rb/cuba-generator-duo)
+
 # cuba-generator-duo
 
 cuba-generator-duo is a generator to help creating Cuba projects.
