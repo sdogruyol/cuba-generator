@@ -19,10 +19,10 @@ module Cuba
         c.action do |args, options|
           if options.type
             generator = Cuba::Generator.new(ARGV[1], options.type)
-            generator.create_database_file if options.database == 'postgresql' || options.database == 'sqlite'
+            generator.create_database_file if options.database == 'postgresql' || options.database == 'sqlite' || options.database == 'mysql'
           else
             generator = Cuba::Generator.new(ARGV[1], :app)
-            generator.create_database_file if options.database == 'postgresql' || options.database == 'sqlite'
+            generator.create_database_file if options.database == 'postgresql' || options.database == 'sqlite' || options.database == 'mysql'
           end
         end
       end
