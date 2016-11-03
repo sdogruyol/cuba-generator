@@ -56,7 +56,7 @@ module Cuba
     end
 
     def setup_postgres
-      create_template 'db'
+      create_template 'postgres'
     end
 
     def setup_gemfile
