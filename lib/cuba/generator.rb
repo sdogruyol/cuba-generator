@@ -32,7 +32,7 @@ module Cuba
       end
     end
 
-    def create_database_file
+    def create_postgres_file
       File.open("./#{@project_name}/database.rb", 'w+') do |file|
         file.write setup_database
       end
