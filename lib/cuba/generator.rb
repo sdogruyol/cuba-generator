@@ -32,9 +32,9 @@ module Cuba
       end
     end
 
-    def create_database_file
-      File.open("./#{@project_name}/database.rb", 'w+') do |file|
-        file.write setup_database
+    def create_postgres_file
+      File.open("./#{@project_name}/postgres.rb", 'w+') do |file|
+        file.write setup_postgres
       end
       File.open("./#{@project_name}/Gemfile", 'w+') do |file|
         file.write setup_gemfile
@@ -55,8 +55,8 @@ module Cuba
       create_template 'rack_config'
     end
 
-    def setup_database
-      create_template 'db'
+    def setup_postgres
+      create_template 'postgres'
     end
 
     def setup_gemfile
