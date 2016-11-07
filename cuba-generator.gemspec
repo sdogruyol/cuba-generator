@@ -4,10 +4,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'cuba/generator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'cuba-generator'
+  spec.name          = 'cuba-template-generator'
   spec.version       = Cuba::Generator::VERSION
-  spec.authors       = ['Serdar Dogruyol']
-  spec.email         = ['dogruyolserdar@gmail.com']
+  spec.authors       = ['Derek Viera']
+  spec.email         = ['ma.dmviera01@gmail.com']
   spec.summary       = %q{Application Generator for Cuba framework.}
   spec.description   = %q{Helps create cuba projects through a minimalist generator.}
   spec.homepage      = ''
