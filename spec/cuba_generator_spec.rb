@@ -1,7 +1,7 @@
 require 'cuba/generator'
 
 describe Cuba::Generator do
-  subject { Cuba::Generator.new('myProject') }
+  subject = Cuba::Generator.new('myProject','app')
 
   it 'create_dir' do
     expect(Dir).to receive(:mkdir)
