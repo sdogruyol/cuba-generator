@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['ma.dmviera01@gmail.com']
   spec.summary       = %q{Application Generator for Cuba framework.}
   spec.description   = %q{Helps create cuba projects through a minimalist generator.}
-  spec.homepage      = ''
+  spec.homepage      = 'https://rangeroob.github.io/cuba-template-generator/'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
